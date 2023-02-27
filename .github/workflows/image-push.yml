@@ -69,7 +69,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/test
+            ghcr.io/nward/test
           # tags: |
           #   ${{ secrets.AWS_FORGE_ID }}.dkr.ecr.us-west-2.amazonaws.com/anubis:${{ env.TAG }}
           #   puppet/pdk:${{ env.TAG }}
