@@ -48,6 +48,13 @@ jobs:
       #     registry: ${{ secrets.AWS_FORGE_ID }}.dkr.ecr.us-west-2.amazonaws.com
       #     username: ${{ secrets.AWS_ACCESS_KEY_ID }}
       #     password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Log in to the Container registry
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       -
         name: Build and push PDK
         id: docker_build_pdk
